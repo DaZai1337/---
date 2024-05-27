@@ -1,0 +1,44 @@
+unit g;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, DBCtrls, ComCtrls;
+
+type
+  TForm9 = class(TForm)
+    GroupBox1: TGroupBox;
+    DateTimePicker1: TDateTimePicker;
+    Label1: TLabel;
+    Label2: TLabel;
+    Edit1: TEdit;
+    Label3: TLabel;
+    DBLookupComboBox1: TDBLookupComboBox;
+    Label4: TLabel;
+    Edit2: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    procedure Button3Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form9: TForm9;
+
+implementation
+
+uses Unit2;
+
+{$R *.dfm}
+
+procedure TForm9.Button3Click(Sender: TObject);
+begin
+  form10.showmodal;
+end;
+
+end.

@@ -1,0 +1,123 @@
+unit Unit6;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ComCtrls, StdCtrls, Buttons, DBCtrls;
+
+type
+  TForm6 = class(TForm)
+    GroupBox1: TGroupBox;
+    Label7: TLabel;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label11: TLabel;
+    DBLookupComboBox1: TDBLookupComboBox;
+    BitBtn1: TBitBtn;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    DateTimePicker1: TDateTimePicker;
+    Edit5: TEdit;
+    DBLookupComboBox2: TDBLookupComboBox;
+    Button3: TButton;
+    Button1: TButton;
+    Button2: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form6: TForm6;
+
+implementation
+
+uses Unit2, Unit1, Unit3, Unit4, Unit5;
+
+{$R *.dfm}
+
+
+
+procedure TForm6.Button1Click(Sender: TObject);
+begin
+  DataModule2.ADOTable1.Edit;
+  form1.dbgrid1.SelectedField.DataSet.FieldByName('id_Тип').value:=IntToStr(StrToInt(VarToStr(dblookupcombobox1.KeyValue)));
+  form1.dbgrid1.SelectedField.DataSet.FieldByName('Название').text:=form6.edit1.text;
+  form1.dbgrid1.SelectedField.DataSet.FieldByName('Инвентарный_номер').text:=form6.edit2.text;
+  form1.dbgrid1.SelectedField.DataSet.FieldByName('Серийный_номер').text:=form6.edit3.text;
+  form1.dbgrid1.SelectedField.DataSet.FieldByName('Стоимость').text:=form6.edit4.text;
+  form1.dbgrid1.SelectedField.DataSet.FieldByName('Дата_покупки').Text:=FormatDateTime('dd/mm/yyyy', Form6.DateTimePicker1.Date);
+  form1.dbgrid1.SelectedField.DataSet.FieldByName('Гарантийный_срок').text:=form6.edit5.text;
+  form1.dbgrid1.SelectedField.DataSet.FieldByName('id_Поставщик').value:=form6.dblookupcombobox2.KeyValue;
+  if DataModule2.ADOTable1.Modified then DataModule2.ADOTable1.Post;
+  form6.Close;
+  datamodule2.ADOTable1.active:=false;
+    datamodule2.ADOTable13.active:=false;
+    datamodule2.ADOTable16.active:=false;
+    datamodule2.ADOTable17.active:=false;
+    datamodule2.ADOTable2.active:=false;
+    datamodule2.ADOTable3.active:=false;
+    datamodule2.ADOTable18.active:=false;
+    datamodule2.ADOTable5.active:=false;
+    datamodule2.ADOTable8.active:=false;
+    datamodule2.ADOTable14.active:=false;
+    datamodule2.ADOTable4.active:=false;
+    datamodule2.ADOTable11.active:=false;
+    datamodule2.ADOTable12.active:=false;
+    datamodule2.ADOTable6.active:=false;
+    datamodule2.ADOTable7.active:=false;
+    datamodule2.ADOTable9.active:=false;
+    datamodule2.ADOTable15.active:=false;
+    datamodule2.ADOTable10.active:=false;
+    datamodule2.ADOTable1.active:=true;
+    datamodule2.ADOTable13.active:=true;
+    datamodule2.ADOTable16.active:=true;
+    datamodule2.ADOTable17.active:=true;
+    datamodule2.ADOTable2.active:=true;
+    datamodule2.ADOTable3.active:=true;
+    datamodule2.ADOTable18.active:=true;
+    datamodule2.ADOTable5.active:=true;
+    datamodule2.ADOTable8.active:=true;
+    datamodule2.ADOTable14.active:=true;
+    datamodule2.ADOTable4.active:=true;
+    datamodule2.ADOTable11.active:=true;
+    datamodule2.ADOTable12.active:=true;
+    datamodule2.ADOTable6.active:=true;
+    datamodule2.ADOTable7.active:=true;
+    datamodule2.ADOTable9.active:=true;
+    datamodule2.ADOTable15.active:=true;
+    datamodule2.ADOTable10.active:=true;
+end;
+
+procedure TForm6.Button2Click(Sender: TObject);
+begin
+  form6.Close;
+end;
+
+procedure TForm6.BitBtn1Click(Sender: TObject);
+begin
+  form4.showmodal;
+end;
+
+procedure TForm6.Button3Click(Sender: TObject);
+begin
+  DataModule2.ADOTable3.Insert;
+  form5.edit6.text:='';
+  form5.edit7.text:='';
+  form5.edit8.text:='';
+  form5.showmodal;
+end;
+
+end.

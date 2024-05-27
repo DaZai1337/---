@@ -1,0 +1,89 @@
+unit Unit5;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm5 = class(TForm)
+    Label8: TLabel;
+    Edit6: TEdit;
+    Label9: TLabel;
+    Edit7: TEdit;
+    Label10: TLabel;
+    Edit8: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form5: TForm5;
+
+implementation
+
+uses Unit2;
+
+{$R *.dfm}
+
+procedure TForm5.Button1Click(Sender: TObject);
+begin
+  if DataModule2.ADOTable3.Modified then DataModule2.ADOTable3.Post;
+  DataModule2.ADOTable3.Edit;
+  if ((form5.edit6.text <> '') and (form5.edit7.text <> '') and (form5.edit8.text <> '')) then
+    begin
+      DataModule2.ADOTable3.Fields.Fields[1].text := edit6.text;
+      DataModule2.ADOTable3.Fields.Fields[2].Text := edit7.text;
+      DataModule2.ADOTable3.Fields.Fields[3].Text := edit8.text;
+      if DataModule2.ADOTable3.Modified then DataModule2.ADOTable3.Post;
+      form5.Close;
+    datamodule2.ADOTable13.active:=false;
+    datamodule2.ADOTable16.active:=false;
+    datamodule2.ADOTable17.active:=false;
+    datamodule2.ADOTable2.active:=false;
+    datamodule2.ADOTable3.active:=false;
+    datamodule2.ADOTable18.active:=false;
+    datamodule2.ADOTable5.active:=false;
+    datamodule2.ADOTable8.active:=false;
+    datamodule2.ADOTable14.active:=false;
+    datamodule2.ADOTable4.active:=false;
+    datamodule2.ADOTable12.active:=false;
+    datamodule2.ADOTable6.active:=false;
+    datamodule2.ADOTable7.active:=false;
+    datamodule2.ADOTable9.active:=false;
+    datamodule2.ADOTable15.active:=false;
+    datamodule2.ADOTable10.active:=false;
+    datamodule2.ADOTable13.active:=true;
+    datamodule2.ADOTable16.active:=true;
+    datamodule2.ADOTable17.active:=true;
+    datamodule2.ADOTable2.active:=true;
+    datamodule2.ADOTable3.active:=true;
+    datamodule2.ADOTable18.active:=true;
+    datamodule2.ADOTable5.active:=true;
+    datamodule2.ADOTable8.active:=true;
+    datamodule2.ADOTable14.active:=true;
+    datamodule2.ADOTable4.active:=true;
+    datamodule2.ADOTable11.active:=true;
+    datamodule2.ADOTable12.active:=true;
+    datamodule2.ADOTable6.active:=true;
+    datamodule2.ADOTable7.active:=true;
+    datamodule2.ADOTable9.active:=true;
+    datamodule2.ADOTable15.active:=true;
+    datamodule2.ADOTable10.active:=true;
+    end;
+end;
+
+procedure TForm5.Button2Click(Sender: TObject);
+begin
+  form5.Close;
+  DataModule2.ADOTable3.Delete;
+end;
+
+end.
