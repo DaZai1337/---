@@ -1,0 +1,127 @@
+object Form14: TForm14
+  Left = 389
+  Top = 140
+  Width = 329
+  Height = 400
+  BorderIcons = []
+  Caption = #1048#1079#1084#1077#1085#1080#1090#1100' '#1076#1072#1085#1085#1099#1077' '#1086' '#1089#1086#1090#1088#1091#1076#1085#1080#1082#1077
+  Color = 13745107
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object GroupBox1: TGroupBox
+    Left = 8
+    Top = 8
+    Width = 297
+    Height = 345
+    Caption = #1057#1086#1090#1088#1091#1076#1085#1080#1082
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 8
+      Top = 24
+      Width = 27
+      Height = 13
+      Caption = #1060#1048#1054
+    end
+    object Label2: TLabel
+      Left = 8
+      Top = 72
+      Width = 79
+      Height = 13
+      Caption = #1044#1072#1090#1072' '#1088#1086#1078#1076#1077#1085#1080#1103
+    end
+    object Label3: TLabel
+      Left = 8
+      Top = 120
+      Width = 45
+      Height = 13
+      Caption = #1058#1077#1083#1077#1092#1086#1085
+    end
+    object Label4: TLabel
+      Left = 8
+      Top = 168
+      Width = 42
+      Height = 13
+      Caption = #1050#1072#1073#1080#1085#1077#1090
+    end
+    object Label5: TLabel
+      Left = 8
+      Top = 216
+      Width = 58
+      Height = 13
+      Caption = #1044#1086#1083#1078#1085#1086#1089#1090#1100
+    end
+    object Edit1: TEdit
+      Left = 8
+      Top = 40
+      Width = 281
+      Height = 21
+      TabOrder = 0
+    end
+    object DateTimePicker1: TDateTimePicker
+      Left = 8
+      Top = 88
+      Width = 186
+      Height = 21
+      Date = 43930.498632881940000000
+      Time = 43930.498632881940000000
+      TabOrder = 1
+    end
+    object Edit2: TEdit
+      Left = 8
+      Top = 136
+      Width = 185
+      Height = 21
+      TabOrder = 2
+    end
+    object Edit3: TEdit
+      Left = 8
+      Top = 184
+      Width = 121
+      Height = 21
+      TabOrder = 3
+    end
+    object DBLookupComboBox1: TDBLookupComboBox
+      Left = 8
+      Top = 232
+      Width = 145
+      Height = 21
+      KeyField = 'ID_'#1044#1086#1083#1078#1085#1086#1089#1090#1100
+      ListField = #1044#1086#1083#1078#1085#1086#1089#1090#1100
+      ListSource = DataModule2.DataSource7
+      TabOrder = 4
+    end
+    object Button1: TButton
+      Left = 64
+      Top = 312
+      Width = 75
+      Height = 25
+      Caption = #1048#1079#1084#1077#1085#1080#1090#1100
+      TabOrder = 5
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 160
+      Top = 312
+      Width = 75
+      Height = 25
+      Caption = #1054#1090#1084#1077#1085#1072
+      TabOrder = 6
+      OnClick = Button2Click
+    end
+    object Button3: TButton
+      Left = 136
+      Top = 216
+      Width = 17
+      Height = 9
+      TabOrder = 7
+      OnClick = Button3Click
+    end
+  end
+end
